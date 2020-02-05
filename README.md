@@ -11,18 +11,36 @@ Work through all these exercises. You edit this file with your answers for these
 * Create a TicketMachine object on the object bench.
 * Upon viewing its methods, `getBalance`, `getPrice`, `insertMoney`, `printTicket`.
 * Use `getPrice` method to view the value of the price of the tickets that was set when this object was created.
+// price = 500
 * Use `insertMoney` method to simulate inserting an amount of money into the machine.
+// inserted 400
 * Use `getBalance` to check that the machine has a record of the amount inserted.
+// 400 was inserted. Balance = 400
 	* You can insert several separate amounts of money into the machine, just like you might insert multiple coins or notes into a real machine. Try inserting the exact amount required for a ticket. As this is a simple machine, a ticket will not be issued automatically, so once you have inserted enough money, call the `printTicket` method. A facsimile ticket should be printed in the BlueJ terminal window.
+
+// 1st test: inserted 1000. Balance should be 1400. Balance is 1400 before ticket printed.
 
 ### Exercise 2.2
 * What value is returned if you check the machine’s balance after it has printed a ticket?
 
+ // 1st test balance after ticket printed: 0
+//      the printTicket method says "Ticket price: 500 cents. Your total is 1400"
+
+// Balance of the machine went to zero. But we know there's money in the machine.
+
+
 ### Exercise 2.3
 * Experiment with inserting different amounts of money before printing tickets.
+// add 400, add 500, add 600. Balance showed 1500
 	* Do you notice anything strange about the machine’s behavior?
+// inserted 100. Balance is 1600. It's adding the balance correctly before print, but not issuing any refunds. People will get MAD.
+
 	* What happens if you insert too much money into the machine – do you receive any refund?
+// no, no refund
 	* What happens if you do not insert enough and then try to print a ticket?
+// inserted 200, and it printed "Ticket price: 500 cents. Your total is 3200."
+// inserted 0, and it printed "Ticket price: 500 cents. Your total is 3200."
+//It looks like the customer is getting charged the balance in the machine 
 
 ### Exercise 2.4
 * Try to obtain a good understanding of a ticket machine’s behavior by interacting with it on the object bench before we start looking at how the `TicketMachine` class is implemented in the next section.
